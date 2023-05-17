@@ -220,7 +220,7 @@ function createCard(upgrade) {
             acquiredUpgrades++;
             money -= upgrade.cost;
             upgrade.cost *= 1.5;
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
+            cost.textContent = 'Köp för ' + upgrade.cost + ' Scratches.';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
             message('Grattis du har köpt en uppgradering!', 'success');

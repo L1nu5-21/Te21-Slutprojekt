@@ -52,7 +52,7 @@ header {
 
 header>picture>img {
     width: 100%;
-    aspect-ratio: 8/2;
+    aspect-ratio: 8/1.4;
 }
 
 a>img:nth-of-type(2) {
@@ -105,7 +105,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    background-color: gray;
+    background-color: darkslategray;
 }
 
 .sidebar {
@@ -114,7 +114,7 @@ a:hover {
     /* ↓ The width when the sidebar _is_ a sidebar */
     flex-basis: 20rem;
     flex-grow: 1;
-    margin-left: 1rem;
+    margin: 1rem;
 }
 
 .sidebar2 {
@@ -125,6 +125,7 @@ a:hover {
     flex-grow: 1;
     display: flex;
     justify-content: right;
+    margin: 1rem;
 }
 
 aside>h1 {
@@ -157,23 +158,34 @@ aside>img {
     flex-grow: 999;
     /* ↓ Wrap when the elements are of equal width */
     min-inline-size: 40%;
-    background-color: beige;
-    padding-bottom: 15%;
+    background-color: lightgray;
+    padding-bottom: 5%;
+    padding-top: 2%;
 }
 
-section>h1 {
+.not-sidebar > * {
+    text-align: justify;
+    width: min(80ch, 100vW - 2rem);
+    margin: auto;
+    width: 80%;
+}
+
+.not-sidebar > h2 {
+    text-align: center;
+}
+
+.not-sidebar > h3 {
+    text-align: center;
+}
+
+section>* {
     color: black;
     margin-left: 10px;
-}
-
-section>ul>li {
-    color: #000;
 }
 
 section>p {
     width: min(30ch, 100vW - 2rem);
     margin-left: 10px;
-    text-align: justify;
 }
 
 @media only screen and (min-width: 900px) {
@@ -200,15 +212,12 @@ section>p {
     padding: 0;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
     gap: 1rem;
-    margin-top: 1rem;
-    margin-left: 1rem;
 }
 
 .gallery img {
     display: block;
-    width: 90%;
     object-fit: cover;
     aspect-ratio: 4/3;
     height: auto;
@@ -281,6 +290,7 @@ audio {
 .footer > picture > img{
     margin: 0;
     padding: 0;
+    /*height: min(8rem, 100vw - 4rem);*/
     width: 100%;
     aspect-ratio: 8/1;
 }
@@ -339,6 +349,9 @@ audio {
 .game-hud {
     display: flex;
     justify-content: space-between;
+    font-size: smaller;
+    color: white;
+    
 }
 
 .game-currency {
@@ -376,6 +389,7 @@ audio {
     text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
+    text-align: center;
 }
 
 #game-button:hover {
