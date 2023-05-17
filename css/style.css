@@ -278,18 +278,11 @@ audio {
     margin-inline: auto;
 }
 
-.footer {
-    --min: 30ch;
-
-    margin-top: auto;
-    padding: var(--space-l-xl) 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
-    gap: var(--space-s-m);
-}
-
-.footer {
+.footer > picture > img{
+    margin: 0;
+    padding: 0;
     width: 100%;
+    aspect-ratio: 8/1;
 }
 
 .hero {
