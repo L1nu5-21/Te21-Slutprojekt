@@ -2,6 +2,7 @@
 
 body {
     margin: 0%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /*@media*/
@@ -41,7 +42,7 @@ body {
     width: 100%;
     list-style: none;
     display: flex;
-}   
+}
 
 header {
     background-color: rgb(29, 29, 27);
@@ -49,16 +50,9 @@ header {
     /*(Personal note: Detta är relaterat till "position" proerty. läs på om "position; absolute", "position; fixed" och "position; relative".)*/
 }
 
-
-a>img {
-    max-width: 100%;
-    max-height: auto;
-    min-width: 187px;
-    min-height: 87.4px;
-
-    margin-top: 4%;
-    margin-left: 5%;
-    padding-bottom: 4%;
+header>picture>img {
+    width: 100%;
+    aspect-ratio: 8/2;
 }
 
 a>img:nth-of-type(2) {
@@ -74,10 +68,6 @@ a>img:nth-of-type(2) {
 
 
 /*Nav*/
-
-nav {
-    /*align-items: center;*/
-}
 
 .nav {
     margin-right: 1.5rem;
@@ -115,7 +105,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    background-color: rgb(169, 202, 81);
+    background-color: gray;
 }
 
 .sidebar {
@@ -124,16 +114,24 @@ a:hover {
     /* ↓ The width when the sidebar _is_ a sidebar */
     flex-basis: 20rem;
     flex-grow: 1;
-    background-color: rgb(169, 202, 81);
-    color: black;
-    margin-bottom: 20%;
+    margin-left: 1rem;
+}
+
+.sidebar2 {
+    /*margin-top: 175px;*/
+    /*(Persoal note: Detta är relaterat till "position" proerty. Läs på om "position; absolute", "position; fixed" och "position; relative".)*/
+    /* ↓ The width when the sidebar _is_ a sidebar */
+    flex-basis: 20rem;
+    flex-grow: 1;
+    display: flex;
+    justify-content: right;
 }
 
 aside>h1 {
     font-family: 'Courier New', Courier, monospace;
     margin-left: 10%;
     font-size: medium;
-}
+}*/
 
 aside>p {
     font-family: 'Courier New', Courier, monospace;
@@ -145,7 +143,7 @@ aside>img {
     max-height: 100%;
     margin-top: 5%;
     margin-left: 20%;
-    /*margin-right: 20%;*/
+    margin-right: 20%;
 }
 
 
@@ -158,30 +156,24 @@ aside>img {
     flex-basis: 0;
     flex-grow: 999;
     /* ↓ Wrap when the elements are of equal width */
-    min-inline-size: 55%;
+    min-inline-size: 40%;
     background-color: beige;
     padding-bottom: 15%;
 }
 
 section>h1 {
-    font-family: 'Courier New', Courier, monospace;
     color: black;
     margin-left: 10px;
 }
 
 section>ul>li {
-    font-family: 'Courier New', Courier, monospace;
     color: #000;
 }
-
-section>p {
-    color: #000;
-}
-
 
 section>p {
     width: min(30ch, 100vW - 2rem);
     margin-left: 10px;
+    text-align: justify;
 }
 
 @media only screen and (min-width: 900px) {
@@ -195,6 +187,48 @@ section>p {
         width: min(60ch, 100vW - 2rem);
     }
 }
+
+/* Gallery */
+
+.container {
+    width: min(80ch, 100vw - 4rem);
+    margin-inline: auto;
+    
+}
+.gallery {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.gallery img {
+    display: block;
+    width: 90%;
+    object-fit: cover;
+    aspect-ratio: 4/3;
+    height: auto;
+}
+
+.gallery figure {
+    position: relative;
+}
+
+.gallery figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* Clicker */
 
 /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
 /* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
@@ -253,9 +287,11 @@ audio {
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
     gap: var(--space-s-m);
 }
-.footer > * {
-    font-size: var(--step--1);
+
+.footer {
+    width: 100%;
 }
+
 .hero {
     display: grid;
     grid-template-areas: 'stack';
@@ -266,14 +302,12 @@ audio {
     place-self: end;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        0deg,
-        var(--color-dark),
-        var(--color-dark-transparent)
-    );
+    background: linear-gradient(0deg,
+            var(--color-dark),
+            var(--color-dark-transparent));
 }
 
-.hero > picture {
+.hero>picture {
     place-self: center;
     grid-area: stack;
     width: 100%;
@@ -298,7 +332,8 @@ audio {
     .lead {
         display: none;
     }
-    .hero > picture {
+
+    .hero>picture {
         max-height: 15vh;
     }
 }
@@ -319,7 +354,7 @@ audio {
 }
 
 /* game-currency är en lista med list items */
-.item > h3 {
+.item>h3 {
     display: flex;
     justify-content: space-between;
     gap: var(--space-xs-s);
@@ -329,6 +364,7 @@ audio {
     .game-hud {
         flex-direction: column-reverse;
     }
+
     .game-controls {
         place-self: center;
     }
@@ -339,7 +375,7 @@ audio {
     width: var(--space-4xl-5xl);
     height: var(--space-4xl-5xl);
     font-size: var(--step-2);
-    background: url('../img/brett-meliti-RgkYMfFopIA-unsplash-removebg-preview.png');
+    background: url('../images/lookingN\'Shitgif.gif');
     background-size: cover;
     background-position: center;
     border: 2px solid transparent;
@@ -369,7 +405,7 @@ audio {
     min-width: 16rem;
 }
 
-#msgbox > p {
+#msgbox>p {
     margin-bottom: var(--space-xs-s);
     padding: var(--space-xs-s);
 }
@@ -410,6 +446,7 @@ audio {
 .card p:not(.title) {
     text-align: end;
 }
+
 /* klassen används på kortets titel, font-weight: 600 gör fonten fetare, en normal
  * font vikt är oftast 400
  */
@@ -423,9 +460,11 @@ audio {
     0% {
         color: var(--color-dark);
     }
+
     50% {
         color: var(--color-dark-transparent);
     }
+
     100% {
         color: var(--color-dark);
     }
