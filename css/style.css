@@ -22,8 +22,11 @@ header {
 
 header>picture>img {
     width: 100%;
-    aspect-ratio: 1.79;
+    aspect-ratio: 8/1.4;
 }
+
+
+
 
 /*Nav*/
 
@@ -67,6 +70,7 @@ a:hover {
 }
 
 .sidebar {
+    /*margin-top: 175px;*/
     /*(Persoal note: Detta är relaterat till "position" proerty. Läs på om "position; absolute", "position; fixed" och "position; relative".)*/
     /* ↓ The width when the sidebar _is_ a sidebar */
     flex-basis: 20rem;
@@ -75,6 +79,7 @@ a:hover {
 }
 
 .sidebar2 {
+    /*margin-top: 175px;*/
     /*(Persoal note: Detta är relaterat till "position" proerty. Läs på om "position; absolute", "position; fixed" och "position; relative".)*/
     /* ↓ The width when the sidebar _is_ a sidebar */
     flex-basis: 20rem;
@@ -102,6 +107,7 @@ aside>img {
     margin-left: 20%;
     margin-right: 20%;
 }
+
 
 /*Non-sidebar*/
 
@@ -190,12 +196,6 @@ section>p {
     padding: 0.5rem;
     background: rgba(0, 0, 0, 0.5);
     color: white;
-}
-
-@media only screen  and (min-width: 940px) {
-    .gallery> img {
-        width: 30%;
-    }
 }
 
 /* Clicker */
